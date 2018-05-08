@@ -2,7 +2,11 @@
   <div>
 
     <div class="wrapper">
-      <app-global-nav></app-global-nav>
+      <header>
+        <app-logo></app-logo>
+        <app-global-nav></app-global-nav>
+      </header>
+
       <nuxt/>
     </div>
 
@@ -12,10 +16,12 @@
 
 <script>
   import AppGlobalNav from '~/components/AppGlobalNav.vue'
+  import AppLogo from '~/components/AppLogo.vue'
 
   export default {
     components: {
-      AppGlobalNav
+      AppGlobalNav,
+      AppLogo
     }
   }
 </script>
@@ -77,7 +83,7 @@
   }
 
   .wrapper {
-    padding-top: 300px;
+    /*padding-top: 300px;*/
   }
 
   .page-enter-active, .page-leave-active {
@@ -85,6 +91,15 @@
   }
   .page-enter, .page-leave-active {
     opacity: 0
+  }
+
+  header {
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 300px;
   }
 
 </style>
