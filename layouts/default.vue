@@ -99,7 +99,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 300px;
+    margin-bottom: 200px;
   }
 
 </style>
