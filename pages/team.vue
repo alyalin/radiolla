@@ -1,1 +1,3 @@
-<template><div>Team Page</div></template>
+<template>
+  <div class="inner-wrapper">Team Page</div>
+</template>

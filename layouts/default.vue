@@ -10,19 +10,27 @@
       <nuxt/>
     </div>
 
-    <img class="pattern" src="~assets/images/pattern.svg" alt="">
+    <app-player :url="playerUrl"></app-player>
   </div>
 </template>
 
 <script>
   import AppGlobalNav from '~/components/AppGlobalNav.vue'
   import AppLogo from '~/components/AppLogo.vue'
+  import AppPlayer from '~/components/AppPlayer.vue'
 
   export default {
     components: {
       AppGlobalNav,
-      AppLogo
-    }
+      AppLogo,
+      AppPlayer
+    },
+
+    computed: {
+      playerUrl: function () {
+        return this.$store.getters.getPlayerUrl;
+      }
+    },
   }
 </script>
 
@@ -38,6 +46,7 @@
     box-sizing: border-box;
     background-color: #000000;
     color: #ffffff;
+    padding-bottom: 60px;
   }
 
   *, *:before, *:after {
@@ -99,7 +108,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 300px;
+    margin-bottom: 50px;
+    padding: 30px;
+  }
+
+  .inner-wrapper {
+    width: 800px;
+    margin: 0 auto;
   }
 
 </style>

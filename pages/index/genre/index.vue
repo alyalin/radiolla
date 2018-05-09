@@ -1,3 +1,3 @@
 <template>
-  <div>aaa433321</div>
+  <div>Выберите жанр</div>
 </template>

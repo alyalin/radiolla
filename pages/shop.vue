@@ -1,1 +1,3 @@
-<template><div>Shop Page</div></template>
+<template>
+  <div class="inner-wrapper">Shop Page</div>
+</template>

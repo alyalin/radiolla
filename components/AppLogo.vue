@@ -1,6 +1,8 @@
 <template>
   <div>
-    <nuxt-link to="/">Logo</nuxt-link>
+    <nuxt-link to="/">
+      <img src="~assets/images/logo.svg" alt="Radiolla Logotype" width="300" height="90">
+    </nuxt-link>
   </div>
 </template>
 

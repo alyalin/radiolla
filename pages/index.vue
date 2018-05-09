@@ -8,9 +8,9 @@
         <nuxt-child :key="$route.params.genre"></nuxt-child>
       </div>
 
-      <template v-if="url">
-        <iframe style="position: fixed; bottom: 0; left: 0;" width="100%" height="60" :src="`https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&feed=${url}`" frameborder="0"></iframe>
-      </template>
+      <img class="pattern" src="~assets/images/pattern.svg" alt="">
+
+
 
     </div>
   </section>
@@ -25,12 +25,6 @@ export default {
   components: {
     AppLogo,
     AppGenreMenu
-  },
-
-  data() {
-    return {
-      url: null
-    }
   },
 
   methods: {

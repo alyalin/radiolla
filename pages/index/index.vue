@@ -1,5 +1,5 @@
 <template>
-  <div>aaaa
+  <div>
     <app-playlist-elem v-for="(playlist, index) in playLists" v-bind:key="index" :playlist="playlist"></app-playlist-elem>
   </div>
 </template>
