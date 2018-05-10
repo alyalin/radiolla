@@ -6,7 +6,14 @@
       </div>
       <div class="playlist__descr">
         <div class="playlist__info">
-          <div class="playlist__play-button" v-on:click="play(playlist.key)"></div>
+          <template v-if="isCurrent">
+            <div class="playlist__play-button" v-on:click="play(playlist)" v-if="isPlaying === false"></div>
+            <div class="playlist__pause-button" v-on:click="pause()" v-if="isPlaying === true"><span
+              class="line"></span><span class="line"></span></div>
+          </template>
+          <template v-else>
+            <div class="playlist__play-button" v-on:click="play(playlist)"></div>
+          </template>
           <div class="playlist__descr">
             <div class="playlist__title">{{ playlist.name }}</div>
             <div class="playlist__stats">
@@ -26,12 +33,30 @@
 </template>
 
 <script>
+  import AppPlayer from '~/components/AppPlayer.vue';
+
   export default {
-    props: ['playlist'],
+    props: ['playlist', 'currentPlaying', 'isPlaying'],
+
+    computed: {
+      isCurrent: function() {
+        if (this.currentPlaying) {
+          return this.playlist.slug === this.currentPlaying.slug;
+        } else {
+          return false;
+        }
+      }
+    },
 
     methods: {
-      play(url) {
-        this.$store.dispatch('setPlayerUrl', url);
+      play(data) {
+        this.$store.dispatch('setPlayerUrl', data.key);
+        this.$store.dispatch('setCurrentPlaying', data);
+        this.$store.dispatch('setIsPlaying', true);
+      },
+
+      pause() {
+        this.$store.dispatch('setIsPlaying', false);
       }
     }
   }
@@ -120,6 +145,34 @@
 
         &:before {
           border-color: transparent transparent transparent #6a8c30;
+        }
+      }
+    }
+
+    &__pause-button {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      flex: 0 0 60px;
+      border: 1px solid #ffffff;
+      margin-right: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+
+      .line {
+        position: absolute;
+        width: 4px;
+        height: 30px;
+        background-color: #ffffff;
+        transform: rotate(0);
+        top: 0;
+        bottom: 0;
+        left: -13px;
+        right: 0;
+        margin: auto;
+
+        & + .line {
+          left: 12px;
         }
       }
     }

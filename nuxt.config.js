@@ -17,6 +17,9 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: '//widget.mixcloud.com/media/js/widgetApi.js', body: true }
     ]
   },
   /*
