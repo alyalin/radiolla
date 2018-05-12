@@ -7,8 +7,8 @@
       <div class="playlist__descr">
         <div class="playlist__info">
           <template v-if="isCurrent">
-            <div class="playlist__play-button" v-on:click="play(playlist)" v-if="isPlaying === false"></div>
-            <div class="playlist__pause-button" v-on:click="pause()" v-if="isPlaying === true"><span
+            <div class="playlist__play-button" v-on:click="play(playlist)" v-if="!isPlayerPlaying"></div>
+            <div class="playlist__pause-button" v-on:click="pause()" v-if="isPlayerPlaying"><span
               class="line"></span><span class="line"></span></div>
           </template>
           <template v-else>
@@ -39,12 +39,15 @@
     props: ['playlist', 'currentPlaying', 'isPlaying'],
 
     computed: {
-      isCurrent: function() {
+      isCurrent() {
         if (this.currentPlaying) {
           return this.playlist.slug === this.currentPlaying.slug;
         } else {
           return false;
         }
+      },
+      isPlayerPlaying() {
+        return this.$store.getters.getIsPlaying;
       }
     },
 
@@ -58,6 +61,10 @@
       pause() {
         this.$store.dispatch('setIsPlaying', false);
       }
+    },
+
+    components: {
+      AppPlayer
     }
   }
 </script>
