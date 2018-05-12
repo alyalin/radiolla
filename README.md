@@ -1,6 +1,6 @@
-# 
+# Radiolla
 
-> 
+> Web application for listening to music
 
 ## Build Setup
 
