@@ -2,7 +2,7 @@
   <div>
     <div class="playlist">
       <div class="playlist__img">
-        <img :src="playlist.pictures.large" :alt="playlist.name">
+        <img :src="playlist.pictures.extra_large" :alt="playlist.name">
       </div>
       <div class="playlist__descr">
         <div class="playlist__info">
@@ -17,9 +17,9 @@
           <div class="playlist__descr">
             <div class="playlist__title">{{ playlist.name }}</div>
             <div class="playlist__stats">
-              <span>Time: {{ playlist.audio_length }}</span>
-              <span>Favs: {{ playlist.favorite_count }}</span>
-              <span>Listen: {{ playlist.listener_count }}</span>
+              <span><img src="~assets/images/clock.svg" alt="Audio Length:"> {{ formattedSeconds }}</span>
+              <span><img src="~assets/images/heart.svg" alt="Favourite Count:"> {{ playlist.favorite_count }}</span>
+              <span><img src="~assets/images/headphones.svg" alt="Listeners:"> {{ playlist.listener_count }}</span>
             </div>
           </div>
         </div>
@@ -48,6 +48,10 @@
       },
       isPlayerPlaying() {
         return this.$store.getters.getIsPlaying;
+      },
+
+      formattedSeconds() {
+        return (new Date(this.playlist.audio_length * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
       }
     },
 
@@ -76,9 +80,10 @@
     border-radius: 3px;
     margin-top: 15px;
     margin-bottom: 15px;
+    transition: all .2s ease-in-out;
 
     &:hover {
-      background-color: lighten(#000000, 5%);
+      background-color: rgba(#000000, .5);
     }
 
     &__img {
@@ -96,6 +101,38 @@
     &__title {
       font-size: 24px;
       margin-bottom: 15px;
+
+      @media (max-width: 600px) {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 20px;
+        overflow: hidden;
+      }
+    }
+
+    &__descr {
+      padding-bottom: 10px;
+      overflow: hidden;
+    }
+
+    &__stats {
+      color: #ffffff;
+      display: flex;
+
+      img {
+        width: 14px;
+        margin-right: 3px;
+      }
+
+      span {
+        display: flex;
+        font-size: 12px;
+        align-items: center;
+
+        & + span {
+          margin-left: 10px;
+        }
+      }
     }
 
     &__tags {
@@ -180,6 +217,14 @@
 
         & + .line {
           left: 12px;
+        }
+      }
+
+      &:hover {
+        border-color: #6a8c30;
+
+        .line {
+          background-color: #6a8c30;
         }
       }
     }

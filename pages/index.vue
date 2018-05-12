@@ -47,10 +47,12 @@ export default {
 <style lang="scss" scoped>
 
   .playlist-wrapper {
-    width: 600px;
+    max-width: 650px;
     margin: 0 auto;
-    background-color: #000000;
+    /*background-color: #000000;*/
     color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 </style>

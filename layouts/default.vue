@@ -89,6 +89,11 @@
     right: 0;
     top: 50%;
     transform: translate(0, -50%);
+    z-index: -1;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   .wrapper {
