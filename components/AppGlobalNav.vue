@@ -10,6 +10,7 @@
   .global-nav {
     display: flex;
     justify-content: flex-end;
+
     &__el {
       color: #ffffff;
       font-size: 18px;

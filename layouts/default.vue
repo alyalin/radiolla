@@ -108,18 +108,24 @@
   }
 
   header {
-    width: 900px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
     padding: 30px;
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
   }
 
   .inner-wrapper {
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 </style>

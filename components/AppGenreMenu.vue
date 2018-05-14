@@ -60,12 +60,18 @@
 
 <style lang="scss" scoped>
   .tags {
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
     margin-bottom: 60px;
+
+    @media (max-width: 800px) {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
 
     .btn-tag {
       color: #ffffff;
@@ -84,6 +90,10 @@
       &.nuxt-link-exact-active {
         border-color: darken(#90BD41, 5%);
         background-color: darken(#90BD41, 13%);
+      }
+
+      @media (max-width: 800px) {
+        display: inline-block;
       }
     }
   }
