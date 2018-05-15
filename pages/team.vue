@@ -3,8 +3,8 @@
     <div class="team-wrapper">
       <div class="b-team" v-for="(t, index) in team" v-bind:key="index">
         <div class="b-team__img">
-          <img :src="`/img/${t.src}.png`"
-               :srcset="`/img/${t.src}.png 1x, /img/${t.src}@2x.png 2x`"
+          <img :src="`img/${t.src}.png`"
+               :srcset="`img/${t.src}.png 1x, /img/${t.src}@2x.png 2x`"
                alt="Base hoodie">
         </div>
         <div class="b-team__info">
