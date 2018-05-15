@@ -45,10 +45,17 @@
   }
 
   .b-team {
-    margin: 20px 8px;
+    margin: 20px 10px;
 
     &__img {
       margin-bottom: 10px;
+      width: 245px;
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
     }
 
     &__info {
