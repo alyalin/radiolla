@@ -13,43 +13,43 @@
       return {
         tagList: [
           {
-            name: 'Эмбиент',
+            name: 'Ambient',
             queryName: 'ambient'
           },
           {
-            name: 'Чилаут',
+            name: 'Chillout',
             queryName: 'chillout'
           },
           {
-            name: 'Классическая музыка',
+            name: 'Classical',
             queryName: 'classical'
           },
           {
-            name: 'Рок',
+            name: 'Rock',
             queryName: 'rock'
           },
           {
-            name: 'Соул',
+            name: 'Soul',
             queryName: 'soul'
           },
           {
-            name: 'Поп',
+            name: 'Pop',
             queryName: 'pop'
           },
           {
-            name: 'Рэп',
+            name: 'Hip-hop',
             queryName: 'rap'
           },
           {
-            name: 'Инди',
+            name: 'Indie',
             queryName: 'indie'
           },
           {
-            name: 'Дабстеп',
+            name: 'Dubstep',
             queryName: 'dubstep'
           },
           {
-            name: `Драм'н'бейс`,
+            name: `D'n'B`,
             queryName: 'drum-bass'
           }
         ]

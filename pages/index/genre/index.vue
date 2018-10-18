@@ -1,3 +1,3 @@
 <template>
-  <div>Выберите жанр</div>
+  <div>Select the genre</div>
 </template>
