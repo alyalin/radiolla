@@ -4,7 +4,6 @@
     <div class="wrapper">
       <header>
         <app-logo></app-logo>
-        <app-global-nav></app-global-nav>
       </header>
 
       <nuxt/>
@@ -15,13 +14,11 @@
 </template>
 
 <script>
-  import AppGlobalNav from '~/components/AppGlobalNav.vue'
   import AppLogo from '~/components/AppLogo.vue'
   import AppPlayer from '~/components/AppPlayer.vue'
 
   export default {
     components: {
-      AppGlobalNav,
       AppLogo,
       AppPlayer
     },
