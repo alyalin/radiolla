@@ -2,18 +2,22 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/radiolla/'
   }
-} : {};
+} : {
+  router: {
+    base: '/'
+  }
+};
 
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
-    title: 'radiolla',
+    title: 'Radiolla — music for inspiration',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Student nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js app based on mixcloud api. Music for work, inspiration, life.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
