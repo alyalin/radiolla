@@ -9,7 +9,7 @@
       <nuxt/>
     </div>
 
-    <client-only><app-player :url="playerUrl"></app-player></client-only>
+    <app-player :url="playerUrl"></app-player>
   </div>
 </template>
 
